@@ -10,5 +10,5 @@ WORKDIR $HOME/app
 
 COPY --chown=user . $HOME/app
 
-RUN pip install "langflow>==0.5.7" "gigachain" "langchain_experimental" -U --user
+RUN pip install "langflow==0.5.5" "gigachain" "langchain_experimental" -U --user
 CMD ["langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
