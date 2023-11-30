@@ -10,5 +10,5 @@ WORKDIR $HOME/app
 
 COPY --chown=user . $HOME/app
 
-RUN pip install 'langflow==0.5.6' langchain langchain-experimental gigachain gpt4all -U --user
+RUN pip install 'langflow==0.5.6' langchain langchain-experimental gigachain 'gpt4all==2.0.2' -U --user
 CMD ["langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
