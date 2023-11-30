@@ -10,5 +10,5 @@ WORKDIR $HOME/app
 
 COPY --chown=user . $HOME/app
 
-RUN pip install langchain langchain_experimental gigachain -U --user
+RUN pip install langflow langchain langchain_experimental gigachain -U --user
 CMD ["langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
