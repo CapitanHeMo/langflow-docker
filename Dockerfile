@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.12-slim
 
 RUN apt-get update && apt-get install gcc g++ git make -y
 RUN useradd -m -u 1000 user
@@ -10,5 +10,5 @@ WORKDIR $HOME/app
 
 COPY --chown=user . $HOME/app
 
-RUN pip install 'langflow==1.1.1' langchain langchain-experimental gigachain -U --user
+RUN pip install 'langflow==1.1.1' langchain -U --user
 CMD ["langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
